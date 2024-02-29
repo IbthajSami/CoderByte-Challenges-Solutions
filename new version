@@ -1,0 +1,13 @@
+----/ New version old one don't work/--------------------------
+
+SELECT 
+    maintable_NMQTS.GroupID,
+    COUNT(maintable_NMQTS.GroupID) AS 'Count'
+FROM 
+    maintable_NMQTS
+JOIN 
+    cb_vendorinformation ON maintable_NMQTS.GroupID = cb_vendorinformation.GroupID
+GROUP BY 
+    maintable_NMQTS.GroupID, cb_vendorinformation.CompanyName
+ORDER BY 
+    Count DESC, maintable_NMQTS.GroupID DESC;
